@@ -1,4 +1,14 @@
-function FinishScreen({ points, maxPossiblePoints, highscore, dispatch }) {
+import { useQuestions } from "../context/QuestionsContext";
+
+function FinishScreen() {
+  const { points, questions, maxPossiblePoints, highscore, dispatch } =
+    useQuestions();
+
+  // const maxPossiblePoints = questions.reduce(
+  //   (prev, cur) => prev + cur.points,
+  //   0
+  // );
+
   const percentage = Math.ceil((points / maxPossiblePoints) * 100);
   return (
     <>
