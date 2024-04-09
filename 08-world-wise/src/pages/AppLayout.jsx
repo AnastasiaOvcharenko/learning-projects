@@ -6,12 +6,11 @@ import User from "../components/User";
 import { useAuth } from "../context/FakeAuthContext";
 
 function AppLayout() {
-  const { user } = useAuth();
   return (
     <div className={styles.app}>
       <Sidebar />
       <Map />
-      {user && <User />}
+      <User />
     </div>
   );
 }
